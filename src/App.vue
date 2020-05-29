@@ -1,14 +1,12 @@
 <template>
   <div id="app">
-    <div id="nav">
 
-    </div>
-
-
+ /
     <Map></Map>
 
 
   </div>
+
 </template>
 
 <script type="text/javascript">
@@ -20,7 +18,6 @@ export default{
     Map,
   }
 }
-
 
 
 </script>

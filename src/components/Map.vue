@@ -10,12 +10,14 @@
         :zoom="zoom"
         style="width:640px; height:360px; margin: 32px auto"
         ref="mapRef"
-        @dragend="handleDrag"
+        @dragend="handleDrag, showNearbyFood"
     ></GmapMap>
   </div>
 </template>
 
 <script>
+import axios from "axios"
+
   export default {
     data(){
 
@@ -42,13 +44,20 @@
       if(localStorage.zoom) {
         this.zoom = parseInt(localStorage.zoom);
       }
+
+
+
     },
 
     mounted(){
-             this.$refs.mapRef.$mapPromise.then(map => this.map = map);
+         this.$refs.mapRef.$mapPromise.then(map => this.map = map);
     },
 
     methods: {
+      showNearbyFood(){
+
+      },
+
       handleDrag(){
         let center = {
           lat: this.map.getCenter().lat(),
@@ -56,9 +65,21 @@
         };
         let zoom = this.map.getZoom();
 
+        const URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${mapCoordinates.lat},${mapCoordinates.lng}&radius=50000&types=food&key=AIzaSyDQfhBxR1Bde0lzxYecZaaBr07vTZEZNjc";
+        axios.get(URL).then(response => {
+          console.log(response.data);
+        }).catch (error =>{
+          console.log(error.message);
+        });
+
+
         localStorage.center = JSON.stringify(center);
         localStorage.zoom = zoom;
-      }
+
+
+      },
+
+
     },
 
     computed: {
