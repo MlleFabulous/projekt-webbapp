@@ -1,12 +1,7 @@
 <template>
   <div id="app">
-
- /
     <Map></Map>
-
-
   </div>
-
 </template>
 
 <script type="text/javascript">

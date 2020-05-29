@@ -9,13 +9,14 @@ Vue.use(VueGeolocation);
 
 
 
+/*
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyDQfhBxR1Bde0lzxYecZaaBr07vTZEZNjc'
+    key: 'AIzaSyDQzX7XDmhLCl-YcoPjVcWVgPau0UYxA6o'
   }
 })
-
+*/
 
 new Vue({
   router,
