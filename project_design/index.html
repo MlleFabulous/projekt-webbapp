@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>MapEat - HomePage </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+		<!-- Following links have been taken from Bootstrap's site "Introduction" -->
+		<!-- Bootstrap version 4.5-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	
+		<link rel="stylesheet" href="style.css"> 
+	</head>
+
+	<body>
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-md navbar-light bg-light sticky top">
+	<div class="container-fluid">
+
+		<!-- Nav - Logo, button and icon, dropdown -->
+		<a class="navbar-brand" href="#"><img id="logo" src="img/logoA.png" alt="NavbarLogo"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span> 
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto"> <!-- ml-auto is a margin, when in full/large size, will push nav to the right instead of the middle--> 
+				<li class="nav-item active">
+					<a class="nav-link" href="#"> Home </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"> Saved </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"> Other </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<!-- Start Info and list-container gridlayout -->
+	<div class="container">
+	<div class="row">  
+
+	<!-- Information display -->
+	<!-- Om vi bestämmer oss för att användaren ska mata in information kan vi omvandla detta till en <form> -->
+	<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+	<div class="container">
+		<h2> FIND EAT </h2>
+		<p> Find eat, map eat, list eat. As you scroll and click on positions on the Google map, the position will be added to a list. 
+			This will make it easier for you to keep track of the positions you've clicked on.  </p>
+
+		<p>Lite random text för att hur det ser ut. Feel free to delete <mark>Lorem ipsum dolor sit amet</mark>, consectetur adipisicing elit, sed do eiusmod
+			tempor <del>incididunt ut labore</del> et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation <u>ullamco laboris nisi</u> ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+			non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+
+		<h4> My Coordinates</h4>
+		<p id="coordinates"> *here goes coordinates for your mouse event movement* </p> <!-- Satte ett ID, ta bort annars -->
+
+		<h4> Map Coordinates</h4>
+		<p id="coordinates"> *here goes coordinates on the map for the position you've clicked* </p> <!-- Satte ett ID, ta bort annars -->
+
+	</div>
+	</div>
+
+	<!-- List -->
+	<div class="col-sm-12 col-md-6"> 
+	<div class="container">
+		
+		<h2> LIST EAT </h2>
+			<p> here goes resturant list </p>
+							
+		<!-- Om vi vill ha checklist behövs input typ. Radera ananrs -->
+		<div class="row"> <!--- Leave this row as it is -->
+			<ul>
+				<li>listitem with checkbox   
+					<input type="checkbox" aria-label="Checkbox for the follwing text input"> 
+				</li>
+				<li>listitem2 with checkbox
+					<input type="checkbox" aria-label="Checkbox for the follwing text input"> 
+				</li>
+				<li>listitem</li>
+				<li>blabla</li>
+				<li>liiiiiiiiiiiiiiiiiiiiiiiiiiiii</li>
+				<li>blablablablablablablablablablablablablablablablablablablablabla</li>
+				<li>liiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</li>
+				<li>liiiiiiiiiiiiiiiiiiiiiiiiiiiii</li>
+				<li>liiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</li>
+				<li>liiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</li>
+			</ul>
+		</div>
+				
+	</div>
+	</div>
+
+	<!--- End Info and list-container gridlayout -->
+	</div>
+	</div>
+
+	<!-- Start Map-container gridlayout -->
+	<div class="container">
+	<div class="row justify-content-end">  
+
+	<!-- Map -->
+	<div class="col-sm-12 col-md-12">  <!-- Map col-md-6 right -->
+		<div class="container">
+			<h2> MAP EAT </h2>
+			<img id="map_photo" src="img/background.png" alt="BackgroundPhoto">
+			<p> Link to <a href="https://google.se"> Google Maps site </a> api </p>
+		</div>
+	</div>
+	
+	<!--- End Map-container gridlayout  -->
+	</div>
+	</div>
+	
+	
+	<!--- Footer -->
+	<footer>
+		<div class="container-fluid padding">
+		<div class="row text-center">
+			<div class="col-md-12">
+				<img src="img/logoB.png">
+				<hr class="dark">
+				<p> <bold>Course: </bold> DA344A - Web application's for mobile devices </p>
+				<p> <bold>Students: </bold>  Maida Sijaric, Roland Askelöf </p>
+			</div>
+		</div>
+		</div>
+	</footer>
+	 
+
+
+</body>
+</html>
+
+
+
+
+
+
+

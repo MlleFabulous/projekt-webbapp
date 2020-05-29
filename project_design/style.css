@@ -1,0 +1,119 @@
+/*
+NOTE FRÅN MAIDA TILL ROLAND
+1. Jag har försökt aligna containers rätt men det går inte. Körde till slut på text+lista i en container, maps i en egen.
+    Maps vill dock inte centrera sig trots att jag skrivit att den ska ta över hela kolumnen (col-12 = ta över hela skärm)
+
+2. I navbar ville jag att man ska kunna länka till nästa sida. När jag höll på med min förra kurs kunde man bara länka till webbläsarens url
+    för vi jobbade i en specifk server. Lät bli att pilla på det ifall du vill integrera det med js :) 
+
+3. Design - jag spenderade mycket tid att jämföra sidor. DOck var grafiskt inget krav, men ville ändå göra nååågot iaf.
+            --Loggan har jag snabbskissat, säg till om du vill att jag ska göra den snyggare
+            --Ersätt bilderna med relevanta saker. T.ex map_photo ska ersättas med api:et. 
+            --Jag har kladdat med itemlist, gav alternativ med checkbox. Ta bort om det inte önskas. 
+
+
+4. Extra: 
+         --Feel free att radera kommentarer som är på svenska. Låt gärna de engelska stå kvar
+         --Säg till om jag ska fixa snyggare logga, något annat grafisk. 
+*/
+
+
+body {
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+/* #otherBody {
+  text-align: center;
+} */
+
+ul {
+  list-style: none; 
+}
+
+li {
+  border-bottom: 1px solid black; /* dynamic to items length */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rep;
+}
+
+input[type=checkbox] {
+  float: left;
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.container {
+  margin: 20px; /*containers have auto margins otherwhise*/
+}
+
+.nav-item {
+  font-size: medium;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700'); /* Detta var här med ett CSS dokument jag använde (från youtube) */
+
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+  #map_photo {
+    width: 900px;
+    height: 900px;
+  }
+
+  }
+@media (min-width: 768px) {
+  #map_photo {
+    width: 700px;
+    height: 700px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+
+  #screen_photo {
+    width: 424px;
+  }
+
+  #map_photo {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
