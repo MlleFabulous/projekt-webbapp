@@ -8,16 +8,6 @@ Vue.config.productionTip = false;
 Vue.use(VueGeolocation);
 
 
-
-/*
-import * as VueGoogleMaps from 'vue2-google-maps'
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: 'AIzaSyDQzX7XDmhLCl-YcoPjVcWVgPau0UYxA6o'
-  }
-})
-*/
-
 new Vue({
   router,
   store,

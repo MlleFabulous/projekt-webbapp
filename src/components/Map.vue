@@ -21,6 +21,7 @@ import axios from "axios"
           lat: 0,
           lng: 0
         },
+
         zoom: 7,
         resturantsObject: {},
         markers: []
@@ -28,60 +29,45 @@ import axios from "axios"
     },
     created(){
       console.log('* created');
+      //
+      // if(localStorage.center){
+      //   this.myCoordinates = JSON.parse(localStorage.center);
+      // }else {
+      //   this.$getLocation({}).then(coordinates =>{
+      //     this.myCoordinates = coordinates;
+      //   }).catch(error => alert(error));
+      // }
+      //
+      // if(localStorage.zoom) {
+      //   this.zoom = parseInt(localStorage.zoom);
+      // }
 
-
-      /*
-      axios.get(URL).then(response => {
-        console.log(response.data);
-      }).catch (error =>{
-        console.log(error.message);
-      });
-
-      if(localStorage.center){
-        this.myCoordinates = JSON.parse(localStorage.center);
-      }else {
-        this.$getLocation({}).then(coordinates =>{
-          this.myCoordinates = coordinates;
-        }).catch(error => alert(error));
-      }
-
-      if(localStorage.zoom) {
-        this.zoom = parseInt(localStorage.zoom);
-      }
-
-
-      */
     },
 
     mounted(){
       console.log('* mounted');
 
-      this.$getLocation()
-        .then(coordinates => {
-          //this.myCoordinates;
+      if(localStorage.center){
+        this.myCoordinates = JSON.parse(localStorage.center);
+        this.zoom = localStorage.zoom;
+        console.log("Mounted, Zoom:" + this.zoom);
+      } else {
+        this.$getLocation().then(coordinates => {
+            //this.myCoordinates;
+            this.myCoordinates.lat = coordinates.lat;
+            this.myCoordinates.lng = coordinates.lng;
+          }).catch(error => alert(error));
+        }
 
-          this.myCoordinates.lat = coordinates.lat;
-          this.myCoordinates.lng = coordinates.lng;
           console.log(this.myCoordinates);
 
           this.map = new window.google.maps.Map(document.getElementById('map'), {
             center: {lat: this.myCoordinates.lat, lng: this.myCoordinates.lng},
-            zoom: 14
+            zoom: 15
           });
           this.map.setOptions({draggable: true});
-
-
-
-
+          this.map.addListener('dragend', this.handleDrag);
           this.getResturants();
-        });
-
-
-
-
-      /* */
-    //  new window.google.maps.Marker()
-    //console.log(map);
 
     },
 
@@ -104,10 +90,11 @@ import axios from "axios"
 
       showNearbyFood(){
         console.log('* showNearbyFood');
-
       },
 
       handleDrag(){
+
+
         console.log('* handleDrag');
 
         let center = {
@@ -116,20 +103,21 @@ import axios from "axios"
         };
         let zoom = this.map.getZoom();
 
-//console.log(this.myCoordinates.lat);
 
         localStorage.center = JSON.stringify(center);
         localStorage.zoom = zoom;
+
+        console.log(localStorage.zoom);
+        this.getResturants();
+
       },
 
       setResturants() {
-        /*
-        this.resturants.results.forEach((restaurant) => {
-            //this.markers.setMap(null);
-        });
-        */
 
-        //this.markers = [];
+
+
+
+        this.markers = [];
 
         this.resturants.results.forEach((restaurant) => {
           console.log(restaurant);
@@ -138,23 +126,13 @@ import axios from "axios"
               title: restaurant.name
             });
             marker.setMap(this.map);
-
             this.markers.push(marker);
         });
       },
-/*
-      public float getZoomLevel(Circle circle) {
-        float zoomLevel=0;
-        if (circle != null){
-            double radius = circle.getRadius();
-            double scale = radius / 500;
-            zoomLevel =(int) (16 - Math.log(scale) / Math.log(2));
-        }
-        return zoomLevel +.5f;
-      }
 
 
-*/
+
+
     },
 
     computed: {
@@ -182,8 +160,9 @@ import axios from "axios"
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 700px;
+  align-items: center;
 }
 
 /* Optional: Makes the sample page fill the window. */
