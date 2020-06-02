@@ -11,6 +11,7 @@ export default{
   name: "App",
   components: {
     Map,
+
   }
 }
 
@@ -20,7 +21,8 @@ export default{
 
 <style>
 #app {
-  font-family: 'Indie Flower', bold;
+  /* font-family: 'Indie Flower', bold; */
+  font-family: 'Cinzel', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

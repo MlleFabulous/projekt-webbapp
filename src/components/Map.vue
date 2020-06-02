@@ -93,8 +93,6 @@ import axios from "axios"
 
     methods: {
 
-
-
       getResturants() {
           const URL = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.myCoordinates.lat},${this.myCoordinates.lng}&radius=500&types=restaurant&key=AIzaSyCbwY4V6vtsmGZKGm8ezOnSXrQaE7qKLFg`;
             console.log(URL);
@@ -104,7 +102,6 @@ import axios from "axios"
           }).catch (error =>{
             console.log(error.message);
           });
-
       },
 
       showNearbyFood(){
@@ -241,6 +238,7 @@ html, body {
 
     #container{
       width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -249,7 +247,7 @@ html, body {
 
     #map-wrapper{
       display: flex;
-      height: 400px;
+      height: 600px;
       width: 60%;
       margin: 20px;
       align-items: center;
@@ -260,14 +258,14 @@ html, body {
 
     #map {
       width:100%;
-      height:400px;
+      height:600px;
       /* background: lime; */
     }
 
   /* /////////// */
 
     #nearby-list-wrapper{
-      height: 400px;
+      height: 600px;
       display: flex;
       flex-direction: column;
       /* background: purple; */
